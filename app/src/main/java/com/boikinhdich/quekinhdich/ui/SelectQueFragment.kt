@@ -37,6 +37,7 @@ class SelectQueFragment : Fragment() {
         cardRecylerview.setHasFixedSize(true)
 
         val btnPalmOff = view.findViewById<TextView>(R.id.btnPalmOff)
+        val btnSetting = view.findViewById<TextView>(R.id.btnSetting)
         val btnRandomQue = view.findViewById<TextView>(R.id.btnRandomQue)
 
         val json = requireContext().assets.open("data.json").bufferedReader().use { it.readText() }
@@ -54,6 +55,10 @@ class SelectQueFragment : Fragment() {
             items.shuffle()
             cardAdapter.notifyDataSetChanged()
             cardRecylerview.scheduleLayoutAnimation()
+        }
+
+        btnSetting.setOnClickListener {
+            mainActivity.switchFragment(TutorialQueFragment(), "TutorialQueFragment", true)
         }
 
         btnRandomQue.setOnClickListener {

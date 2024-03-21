@@ -5,15 +5,15 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context=".ui.MainActivity">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_gravity="center"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -21,30 +21,30 @@
             android:id="@+id/tvIdQue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:text="19"
-            android:fontFamily="@font/truculenta_semibold"
             android:layout_gravity="center"
-            android:textSize="18sp"
-            android:textColor="@android:color/black" />
+            android:layout_marginHorizontal="10dp"
+            android:fontFamily="@font/truculenta_semibold"
+            android:text="19"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
 
         <ImageView
             android:id="@+id/imgSmall"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/ic_3"/>
+            android:src="@drawable/ic_3" />
 
         <TextView
             android:id="@+id/tvLoaiQue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginHorizontal="10dp"
+            android:fontFamily="@font/truculenta_semibold"
             android:gravity="center"
             android:text="Quẻ\nĐại\nCát"
-            android:fontFamily="@font/truculenta_semibold"
-            android:layout_gravity="center"
-            android:textSize="12sp"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -57,22 +57,22 @@
                 android:id="@+id/tvTenQue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Thạch địa tụy"
                 android:layout_gravity="center"
-                android:textSize="20sp"
+                android:text="Thạch địa tụy"
                 android:textColor="@android:color/black"
-                android:textStyle="bold"/>
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Vui lòng chọn thẻ bên dưới"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:textSize="8sp"
+                android:text="Vui lòng chọn thẻ bên dưới"
                 android:textColor="@android:color/black"
-                android:textStyle="bold"/>
+                android:textSize="8sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -80,15 +80,15 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginLeft="10dp"
-            android:src="@drawable/ic_am_duong"/>
+            android:src="@drawable/ic_am_duong" />
 
 
     </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -102,15 +102,14 @@
                 android:layout_height="200dp"
                 android:src="@drawable/ic_3_thuy_loi_tran" />
 
-            <TextView
-                android:id="@+id/tvInformationQue"
-                android:layout_width="wrap_content"
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="10dp"
-                android:text="Vui lòng chọn thẻ bên dưới"
-                android:layout_gravity="center"
-                android:textSize="14sp"
-                android:textColor="@android:color/black" />
+                android:clipToPadding="true"
+                android:nestedScrollingEnabled="false" />
 
         </LinearLayout>
 
