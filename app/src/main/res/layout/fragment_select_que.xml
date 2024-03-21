@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".ui.MainActivity">
+
+    <TextView
+        android:id="@+id/tvTenQue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp"
+        android:text="Vui lòng chọn thẻ bên dưới"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/btnPalmOff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="80dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/selector_black_rd10"
+        android:gravity="center"
+        android:text="Tráo quẻ"
+        android:padding="5dp"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/btnRandomQue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="80dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/selector_black_rd10"
+        android:gravity="center"
+        android:text="Bốc quẻ"
+        android:padding="5dp"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <com.mlsdev.animatedrv.AnimatedRecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:animationDuration="600"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        app:layoutAnimation="@anim/layout_animation_from_bottom_scale"
+        app:layoutManagerOrientation="vertical"
+        app:gridLayoutManagerColumns="8"
+        app:layoutManagerReverse="false"
+        app:layoutManagerType="grid" />
+
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/recyclerView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        tools:listitem="@layout/list_item" />-->
+
+</LinearLayout>
