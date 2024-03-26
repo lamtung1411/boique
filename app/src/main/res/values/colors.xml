@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="colorPrimary">#3C94FF</color>
+    <color name="colorPrimaryDark">#3C94FF</color>
+    <color name="colorPrimary_click">#002E71</color>
+    <color name="colorAccent">#D81B60</color>
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="red">#5E101A</color>
+    <color name="brown">#EDB276</color>
+    <color name="red_custom">#5e101a</color>
+
+    <color name="transparent_click">#12000000</color>
 </resources>

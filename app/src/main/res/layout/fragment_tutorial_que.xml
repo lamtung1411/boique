@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/ic_bg_detail"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".ui.MainActivity">
@@ -23,7 +24,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -63,11 +65,30 @@ Quẻ Kinh Dịch. Tôi chúc Bạn sẽ đưa ra được những quyết đị
                 android:layout_marginVertical="10dp"
                 android:text="Bước 1: Tập trung suy nghĩ vào nôi dung câu hỏi trong vòng 20-30s mà bản thân mình đang gặp vấn đề hoặc đang gặp khúc mắc không biết nên xử
 Ií, giải quyêt như thê nào. Nên nhớ rằng Bạn càng tập trung nghiêm túc bao nhiêu thì mức độ linh ứng càng cao bấy nhiêu.
-\n\nBước 2: Sau đó, trộn đều bộ bài lên và rút ngẫu nhiên một thẻ và xem nội dung của Quẻ đó chính là thông điệp đưa ra cho Bạn đối với câu hỏi đó.\n\nCách thứ nhất: Hãy bảo họ tập trung suy nghĩ vào nội dung câu hỏi trong vòng 20-30s mà bản thân mình đang gặp vấn đề hoặc đang gặp khúc mắc không biêt nên xử lí, giải quyêt như thê nào. Và cũng hãy bảo họ thật nghiêm túc Bạn nhé. Sau đo, Bạn trộn đều bộ bài lên và bảo họ rút ngẫu nhiên một thẻ và xem nội dung của Quẻ đó chính là thông điệp đưa ra cho họ.
-\n\nCách thứ hai: Bạn bảo họ tập trung suy nghĩ trong đầu về 2 con số bất kì từ 1-64 kèm theo một câu hỏi mà họ đang quan tâm sau đó bảo họ nói cho bạn biết về con số mà họ đang nghĩ trong đầu. Sau khi đã biết được con số đó bạn hãy tìm trong Bộ thẻ 64 Quẻ Kinh Dịch rồi dựa vào Bộ thẻ để nói cho họ biết về thông điệp mà Bộ thẻ đưa ra đối với câu hỏi của họ."
+\n\nBước 2: Sau đó, trộn đều bộ bài lên và rút ngẫu nhiên một thẻ và xem nội dung của Quẻ đó chính là thông điệp đưa ra cho Bạn đối với câu hỏi đó."
                 android:textColor="@android:color/black"
                 android:textSize="14sp" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/alegreya"
+                android:gravity="center"
+                android:text="Khi xem cho\n&quot;người khác&quot;"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginVertical="10dp"
+                android:text="Cách thứ nhất: Hãy bảo họ tập trung suy nghĩ vào nội dung câu hỏi trong vòng 20-30s mà bản thân mình đang gặp vấn đề hoặc đang gặp khúc mắc không biêt nên xử lí, giải quyêt như thê nào. Và cũng hãy bảo họ thật nghiêm túc Bạn nhé. Sau đo, Bạn trộn đều bộ bài lên và bảo họ rút ngẫu nhiên một thẻ và xem nội dung của Quẻ đó chính là thông điệp đưa ra cho họ.
+            \n\nCách thứ hai: Bạn bảo họ tập trung suy nghĩ trong đầu về 2 con số bất kì từ 1-64 kèm theo một câu hỏi mà họ đang quan tâm sau đó bảo họ nói cho bạn biết về con số mà họ đang nghĩ trong đầu. Sau khi đã biết được con số đó bạn hãy tìm trong Bộ thẻ 64 Quẻ Kinh Dịch rồi dựa vào Bộ thẻ để nói cho họ biết về thông điệp mà Bộ thẻ đưa ra đối với câu hỏi của họ."
+                android:textSize="14sp" />
 
 
         </LinearLayout>

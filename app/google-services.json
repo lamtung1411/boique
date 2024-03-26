@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "22010753316",
+    "firebase_url": "https://vpower-1c5ac.firebaseio.com",
+    "project_id": "vpower-1c5ac",
+    "storage_bucket": "vpower-1c5ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22010753316:android:e9cb7d0a1f0005b358c3b1",
+        "android_client_info": {
+          "package_name": "com.boikinhdich.quekinhdich"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "22010753316-vdkod4s3ktqg0s3aipr7m2ce2v9rggv8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.boikinhdich.quekinhdich",
+            "certificate_hash": "0f66fce14a219d20d6606066c069ca52d0514b32"
+          }
+        },
+        {
+          "client_id": "22010753316-lrd9rh4g93dlf3hmmp0o1brknp6qi6mn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.boikinhdich.quekinhdich",
+            "certificate_hash": "2bb00f0d1663bc924bdf5ebb90c80845cb7510d0"
+          }
+        },
+        {
+          "client_id": "22010753316-hal5fdukpaqoq23f2pe0fb4f5juhe78p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGVB4ttXipUSkqEbbr9dfEzdjrNrYAqPU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "22010753316-hal5fdukpaqoq23f2pe0fb4f5juhe78p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "22010753316-vnv5l11rscctrvb8flufdognimn48u1i.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.boikinhdich.quekinhdich"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

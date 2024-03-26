@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.boikinhdich.quekinhdich.R
+import org.w3c.dom.Text
 
 
 class CardAdapter : RecyclerView.Adapter<CardAdapter.ViewHolder>() {
@@ -31,6 +32,7 @@ class CardAdapter : RecyclerView.Adapter<CardAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageView: ImageView = itemView.findViewById(R.id.imageCard)
+//        val imageView: TextView = itemView.findViewById(R.id.imageCard)
     }
 
 
@@ -50,6 +52,8 @@ class CardAdapter : RecyclerView.Adapter<CardAdapter.ViewHolder>() {
         holder.imageView.setOnClickListener {
             itemClickListener?.onItemClick(position)
         }
+
+//        holder.imageView.text = items[position].id.toString()
 
         // sets the image to the imageview from our itemHolder class
     }

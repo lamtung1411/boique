@@ -1,4 +1,4 @@
-package com.amuse.animalsounds.utils.ext
+package com.boikinhdich.quekinhdich.utils.ext
 
 import android.app.Activity
 import android.content.ActivityNotFoundException
@@ -9,6 +9,7 @@ import android.graphics.Point
 import android.net.Uri
 import android.os.Build
 import android.util.DisplayMetrics
+import android.util.Log
 import android.view.Display
 import android.view.View
 import android.view.WindowManager
@@ -16,6 +17,9 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import com.boikinhdich.quekinhdich.R
+import com.boikinhdich.quekinhdich.utils.isActiveRateAppPlayStore
+import com.google.android.play.core.review.ReviewInfo
+import com.google.android.play.core.review.ReviewManager
 import java.util.Locale
 
 
@@ -124,42 +128,42 @@ fun Activity.onShareApp() {
     val shareIntent = Intent.createChooser(sendIntent, null)
     startActivity(shareIntent)
 }
-//
-//fun Activity.onRateApp(reviewManager: ReviewManager) {
-//    Log.e("onRateApp", " ${isActiveRateAppPlayStore()}")
-//    if (!isActiveRateAppPlayStore()) {
-//        openApp(packageName)
-//        return
-//    }
-//    reviewManager.requestReviewFlow()
-//        .addOnCompleteListener { task ->
-//            if (task.isSuccessful) {
-//                Log.e("showRateApp", "${task.isSuccessful} ")
-//                // We can get the ReviewInfo object
-//                val reviewInfo: ReviewInfo = task.result
-//                reviewManager.launchReviewFlow(this, reviewInfo)
-//                    .addOnCompleteListener { task1 ->
-//                        Log.e("addOnCompleteListener", "${task1.isSuccessful} ${task1.isComplete}")
-//                        if (!task1.isSuccessful)
-//                            openApp(packageName)
-//                    }.addOnFailureListener {
-//                        openApp(packageName)
-//                    }.addOnCanceledListener {
-//                        openApp(packageName)
-//                    }
-//
-//            } else {
-//                // There was some problem, continue regardless of the result.
-//                // show native rate app dialog on error
-//                openApp(packageName)
-//            }
-//        }.addOnFailureListener {
-//            openApp(packageName)
-//        }.addOnCanceledListener {
-//            openApp(packageName)
-//        }
-//
-//}
+
+fun Activity.onRateApp(reviewManager: ReviewManager) {
+    Log.e("onRateApp", " ${isActiveRateAppPlayStore()}")
+    if (!isActiveRateAppPlayStore()) {
+        openApp(packageName)
+        return
+    }
+    reviewManager.requestReviewFlow()
+        .addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                Log.e("showRateApp", "${task.isSuccessful} ")
+                // We can get the ReviewInfo object
+                val reviewInfo: ReviewInfo = task.result
+                reviewManager.launchReviewFlow(this, reviewInfo)
+                    .addOnCompleteListener { task1 ->
+                        Log.e("addOnCompleteListener", "${task1.isSuccessful} ${task1.isComplete}")
+                        if (!task1.isSuccessful)
+                            openApp(packageName)
+                    }.addOnFailureListener {
+                        openApp(packageName)
+                    }.addOnCanceledListener {
+                        openApp(packageName)
+                    }
+
+            } else {
+                // There was some problem, continue regardless of the result.
+                // show native rate app dialog on error
+                openApp(packageName)
+            }
+        }.addOnFailureListener {
+            openApp(packageName)
+        }.addOnCanceledListener {
+            openApp(packageName)
+        }
+
+}
 
 fun Activity.getScreenSizeInches(activity: Activity): Double {
     val windowManager = activity.windowManager
@@ -218,6 +222,15 @@ fun Activity.openApp(appPackageName: String) {
                 Uri.parse("https://play.google.com/store/apps/details?id=$appPackageName")
             )
         )
+    }
+}
+
+fun tryCatch(onTry: (() -> Unit)) {
+    try {
+        onTry.invoke()
+    } catch (e: Exception) {
+        e.printStackTrace()
+//        FirebaseCrashlytics.getInstance().recordException(e)
     }
 }
 

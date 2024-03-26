@@ -7,75 +7,115 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:background="@drawable/ic_bg"
     tools:context=".ui.MainActivity">
 
-    <TextView
-        android:id="@+id/tvTenQue"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_gravity="center"
         android:layout_marginTop="30dp"
-        android:text="Vui lòng chọn thẻ bên dưới"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:layout_marginHorizontal="15dp"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/btnSetting"
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arizonia_regular"
+            android:text="Vui lòng chọn thẻ bên dưới"
+            android:textColor="#EDB276"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <carbon.widget.ImageView
+            android:id="@+id/btnSetting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_setting"
+            android:padding="10dp"
+            app:carbon_rippleColor="@color/transparent_click"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="80dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/selector_black_rd10"
-        android:gravity="center"
-        android:text="Hướng dẫn xem bói"
-        android:padding="5dp"
-        android:textAllCaps="true"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp"
-        android:textStyle="bold" />
+        android:layout_marginHorizontal="20dp"
+        android:orientation="horizontal">
 
 
-    <TextView
-        android:id="@+id/btnPalmOff"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="80dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/selector_black_rd10"
-        android:gravity="center"
-        android:text="Tráo quẻ"
-        android:padding="5dp"
-        android:textAllCaps="true"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp"
-        android:textStyle="bold" />
+        <carbon.widget.TextView
+            android:id="@+id/btnInstruct"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:carbon_cornerRadius="8dp"
+            android:background="@color/brown"
+            app:carbon_rippleColor="@color/transparent_click"
+            android:gravity="center"
+            android:text="Hướng dẫn"
+            android:padding="10dp"
+            android:textAllCaps="true"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/btnRandomQue"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="80dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/selector_black_rd10"
-        android:gravity="center"
-        android:text="Bốc quẻ"
-        android:padding="5dp"
-        android:textAllCaps="true"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp"
-        android:textStyle="bold" />
+
+        <carbon.widget.TextView
+            android:id="@+id/btnPalmOff"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="10dp"
+            app:carbon_cornerRadius="8dp"
+            android:background="@color/brown"
+            app:carbon_rippleColor="@color/transparent_click"
+            android:gravity="center"
+            android:text="Tráo quẻ"
+            android:padding="10dp"
+            android:textAllCaps="true"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <carbon.widget.TextView
+            android:id="@+id/btnRandomQue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:carbon_cornerRadius="8dp"
+            android:background="@color/brown"
+            app:carbon_rippleColor="@color/transparent_click"
+            android:gravity="center"
+            android:text="Bốc quẻ"
+            android:padding="10dp"
+            android:textAllCaps="true"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 
     <com.mlsdev.animatedrv.AnimatedRecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/cardRecylerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:animationDuration="600"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
         app:layoutAnimation="@anim/layout_animation_from_bottom_scale"
         app:layoutManagerOrientation="vertical"
-        app:gridLayoutManagerColumns="8"
         app:layoutManagerReverse="false"
         app:layoutManagerType="grid" />
 

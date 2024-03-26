@@ -1,4 +1,4 @@
-package com.boikinhdich.quekinhdich.model
+package com.boikinhdich.quekinhdich.adapter.model
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
