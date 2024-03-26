@@ -1,31 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_bg_detail"
     android:gravity="center"
-    android:orientation="vertical"
     tools:context=".ui.MainActivity">
 
     <TextView
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:fontFamily="@font/alegreya"
         android:gravity="center"
-        android:text="Lưu ý\n&quot;khi sử dụng&quot;"
+        android:text="Lưu ý &quot;khi sử dụng&quot;"
         android:textColor="@android:color/black"
-        android:textSize="20sp" />
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp">
+        android:layout_marginBottom="20dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,7 +46,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginVertical="10dp"
                 android:text="Lưu ý 1: Trong một quẻ sẽ có 14 vấn đề dự đoán khác nhau. Tuy nhiên, khi rút quẻ chỉ xem một nội dung duy nhật nà trước khi rút quẻ Bạn nghĩ đến vấn đề đó chứ không phải xem tất cả ý nghĩa của 14 nội dung trong quẻ.
 \n\nLưu ý 2: Đối với cùng một câu hỏi không nên rút quẻ 2 lần để hỏi vì nếu làm như vậy sẽ mất đi sự linh ứng dẫn đến thông điệp đưa ra không chính xác do quá lạm dụng. Bạn có thể hỏi nhiều câu hỏi khác nhau tại một thời điểm, và nên nhớ sau mỗi câu hỏi nên trộn đều bộ thẻ và sau đó làm lại như
 Bước1 Bạn nhé.
@@ -53,7 +61,7 @@ Quẻ Kinh Dịch. Tôi chúc Bạn sẽ đưa ra được những quyết đị
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/alegreya"
                 android:gravity="center"
-                android:text="Khi xem cho\n&quot;bản thân&quot;"
+                android:text="Khi xem cho &quot;bản thân&quot;"
                 android:textColor="@android:color/black"
                 android:textSize="20sp"
                 android:textStyle="italic" />
@@ -62,7 +70,7 @@ Quẻ Kinh Dịch. Tôi chúc Bạn sẽ đưa ra được những quyết đị
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginVertical="10dp"
+                android:layout_marginTop="10dp"
                 android:text="Bước 1: Tập trung suy nghĩ vào nôi dung câu hỏi trong vòng 20-30s mà bản thân mình đang gặp vấn đề hoặc đang gặp khúc mắc không biết nên xử
 Ií, giải quyêt như thê nào. Nên nhớ rằng Bạn càng tập trung nghiêm túc bao nhiêu thì mức độ linh ứng càng cao bấy nhiêu.
 \n\nBước 2: Sau đó, trộn đều bộ bài lên và rút ngẫu nhiên một thẻ và xem nội dung của Quẻ đó chính là thông điệp đưa ra cho Bạn đối với câu hỏi đó."
@@ -76,7 +84,7 @@ Ií, giải quyêt như thê nào. Nên nhớ rằng Bạn càng tập trung ngh
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/alegreya"
                 android:gravity="center"
-                android:text="Khi xem cho\n&quot;người khác&quot;"
+                android:text="Khi xem cho &quot;người khác&quot;"
                 android:textColor="@android:color/black"
                 android:textSize="20sp"
                 android:textStyle="italic" />
@@ -93,8 +101,27 @@ Ií, giải quyêt như thê nào. Nên nhớ rằng Bạn càng tập trung ngh
 
         </LinearLayout>
 
-
     </ScrollView>
 
+    <carbon.widget.TextView
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/red_custom"
+        android:fontFamily="@font/truculenta_bold"
+        android:gravity="center"
+        android:paddingHorizontal="40dp"
+        android:paddingVertical="10dp"
+        android:text="Quay lại"
+        android:textAllCaps="true"
+        android:textColor="#ffff"
+        android:textSize="18sp"
+        app:carbon_cornerRadius="10dp"
+        app:carbon_rippleColor="@color/transparent_click"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

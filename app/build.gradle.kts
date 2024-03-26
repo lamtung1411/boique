@@ -76,7 +76,7 @@ android {
 //        implementation("com.github.Dinhvietanhk5.NSExtension:nsdialog:3.0.1")
 
         //rating bar
-//        implementation("com.hedgehog.ratingbar:app:1.1.2")
+        implementation("com.github.a914-gowtham:compose-ratingbar:1.3.11")
 
     }
 }

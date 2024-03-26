@@ -49,7 +49,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginHorizontal="20dp"
         android:orientation="horizontal">
 
@@ -59,16 +59,16 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:carbon_cornerRadius="8dp"
+            android:textSize="18sp"
+            android:fontFamily="@font/truculenta_bold"
+            app:carbon_cornerRadius="10dp"
             android:background="@color/brown"
             app:carbon_rippleColor="@color/transparent_click"
             android:gravity="center"
             android:text="Hướng dẫn"
             android:padding="10dp"
             android:textAllCaps="true"
-            android:textColor="#FFFFFF"
-            android:textSize="15sp"
-            android:textStyle="bold" />
+            android:textColor="#FFFFFF" />
 
 
         <carbon.widget.TextView
@@ -77,32 +77,32 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginHorizontal="10dp"
-            app:carbon_cornerRadius="8dp"
+            android:textSize="18sp"
+            android:fontFamily="@font/truculenta_bold"
+            app:carbon_cornerRadius="10dp"
             android:background="@color/brown"
             app:carbon_rippleColor="@color/transparent_click"
             android:gravity="center"
             android:text="Tráo quẻ"
             android:padding="10dp"
             android:textAllCaps="true"
-            android:textColor="#FFFFFF"
-            android:textSize="15sp"
-            android:textStyle="bold" />
+            android:textColor="#FFFFFF" />
 
         <carbon.widget.TextView
             android:id="@+id/btnRandomQue"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:carbon_cornerRadius="8dp"
+            android:textSize="18sp"
+            android:fontFamily="@font/truculenta_bold"
+            app:carbon_cornerRadius="10dp"
             android:background="@color/brown"
             app:carbon_rippleColor="@color/transparent_click"
             android:gravity="center"
-            android:text="Bốc quẻ"
+            android:text="Xem hộ"
             android:padding="10dp"
             android:textAllCaps="true"
-            android:textColor="#FFFFFF"
-            android:textSize="15sp"
-            android:textStyle="bold" />
+            android:textColor="#FFFFFF" />
 
     </LinearLayout>
 

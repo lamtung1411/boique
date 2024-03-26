@@ -9,17 +9,21 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import carbon.widget.ImageView
+import com.amuse.animalsounds.utils.ext.diaLogSetting
 import com.boikinhdich.quekinhdich.R
 import com.boikinhdich.quekinhdich.adapter.CardAdapter
 import com.boikinhdich.quekinhdich.adapter.CardModel
 import com.boikinhdich.quekinhdich.adapter.model.fromJsonArray
 import com.boikinhdich.quekinhdich.databinding.FragmentSelectQueBinding
+import com.google.android.play.core.review.ReviewManager
+import com.google.android.play.core.review.testing.FakeReviewManager
 import java.util.Random
 
 class SelectQueFragment : Fragment() {
 
     lateinit var mainActivity: MainActivity
     lateinit var detailQueFragment: DetailQueFragment
+    private var reviewManager: ReviewManager? = null
 
     private val cardAdapter by lazy { CardAdapter() }
 
@@ -32,6 +36,7 @@ class SelectQueFragment : Fragment() {
 
         detailQueFragment = DetailQueFragment()
         mainActivity = activity as MainActivity
+        reviewManager = FakeReviewManager(context)
 
         binding.apply {
             // Khởi tạo RecyclerView và adapter
@@ -60,8 +65,12 @@ class SelectQueFragment : Fragment() {
                 cardRecylerview.scheduleLayoutAnimation()
             }
 
-            btnSetting.setOnClickListener {
+            btnInstruct.setOnClickListener {
                 mainActivity.switchFragment(TutorialQueFragment(), "TutorialQueFragment", true)
+            }
+
+            btnSetting.setOnClickListener {
+                mainActivity.diaLogSetting(reviewManager!!)
             }
 
             btnRandomQue.setOnClickListener {

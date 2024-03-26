@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<carbon.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/white"
+    app:carbon_cornerRadius="20dp"
     android:gravity="center|top"
     android:orientation="vertical">
 
-    <TextView
+    <carbon.widget.TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/shape_blue_fade_left_to_right"
+        android:background="@color/red_custom"
         android:gravity="center"
         android:paddingVertical="12dp"
         android:textColor="@color/white"
@@ -21,11 +22,12 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="@string/title_rate"
         android:textColor="@android:color/black"
-        android:textSize="10sp"
+        android:fontFamily="@font/truculenta"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,11 +37,12 @@
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
+        android:fontFamily="@font/truculenta"
         android:text="@string/content_rate"
         android:textColor="@android:color/black"
-        android:textSize="14sp" />
+        android:textSize="15sp" />
 
 <!--    <com.hedgehog.ratingbar.RatingBar-->
 <!--        android:id="@+id/simpleRatingBar"-->
@@ -66,16 +69,16 @@
         android:layout_marginHorizontal="16dp"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/edtFeedback"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shape2"
-            android:hint="@string/input_rate"
-            android:minLines="3"
-            android:gravity="top"
-            android:paddingHorizontal="16dp"
-            android:paddingVertical="12dp" />
+<!--        <EditText-->
+<!--            android:id="@+id/edtFeedback"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/shape2"-->
+<!--            android:hint="@string/input_rate"-->
+<!--            android:minLines="3"-->
+<!--            android:gravity="top"-->
+<!--            android:paddingHorizontal="16dp"-->
+<!--            android:paddingVertical="12dp" />-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -84,30 +87,40 @@
             android:layout_marginBottom="24dp"
             android:orientation="horizontal">
 
-            <TextView
+            <carbon.widget.TextView
                 android:id="@+id/btnLater"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
-                android:background="@drawable/shape2"
                 android:gravity="center"
                 android:paddingVertical="10dp"
                 android:text="@string/close"
-                android:textSize="14sp" />
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/truculenta_bold"
+                app:carbon_cornerRadius="10dp"
+                android:background="@color/brown"
+                app:carbon_rippleColor="@color/transparent_click"/>
 
-            <TextView
+            <carbon.widget.TextView
                 android:id="@+id/btnSubmit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_weight="1"
-                android:background="@drawable/selector_blue_rd5"
                 android:gravity="center"
                 android:paddingVertical="10dp"
                 android:text="@string/send"
+                android:textSize="20sp"
                 android:textColor="@color/white"
-                android:textSize="14sp" />
+                android:fontFamily="@font/truculenta_bold"
+                app:carbon_cornerRadius="10dp"
+                android:background="@color/red_custom"
+                app:carbon_rippleColor="@color/transparent_click"/>
+
         </LinearLayout>
+
     </LinearLayout>
-</LinearLayout>
+
+</carbon.widget.LinearLayout>

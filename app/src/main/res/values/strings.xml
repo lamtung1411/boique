@@ -6,18 +6,29 @@
     <string name="id_intermediary">ca-app-pub-4585413821771588/7403884744</string>
     <string name="id_native">ca-app-pub-4585413821771588/5697402473</string>
 
-    <string name="content_rate">Rate the app\nHelp us improve the app</string>
-    <string name="title_rate">Do you like this app?</string>
+<!--    <string name="content_rate">Rate the app\nHelp us improve the app</string>-->
+<!--    <string name="title_rate">Do you like this app?</string>-->
     <string name="input_rate">Enter your feedback</string>
 
-    <string name="rateBtnTxt" translatable="false">Rate 5 stars</string>
-    <string name="rateQuestionTxt" translatable="false">If you like our app, please rate it 5 stars</string>
+<!--    <string name="rateBtnTxt" translatable="false">Rate 5 stars</string>-->
+<!--    <string name="rateQuestionTxt" translatable="false">If you like our app, please rate it 5 stars</string>-->
 
     <string name="close">Close</string>
     <string name="send">Send</string>
 
-    <string name="otherAppsTitle" translatable="false">More apps</string>
+<!--    <string name="otherAppsTitle" translatable="false">More apps</string>-->
+<!--    <string name="jezyk" translatable="false">Language</string>-->
+<!--    <string name="terms_of_use" translatable="false">Privacy &amp; Terms</string>-->
+<!--    <string name="shareApp" translatable="false">Share</string>-->
+
+    <string name="otherAppsTitle" translatable="false">Thêm App</string>
     <string name="jezyk" translatable="false">Language</string>
-    <string name="terms_of_use" translatable="false">Privacy &amp; Terms</string>
-    <string name="shareApp" translatable="false">Share</string>
+    <string name="terms_of_use" translatable="false">Quyền &amp; Chính sách</string>
+    <string name="shareApp" translatable="false">Chia sẻ</string>
+
+    <string name="title_rate">Bạn có thích app này không?</string>
+    <string name="content_rate">Đánh giá App\nHãy giúp chúng tôi cải thiện ứng dụng</string>
+
+    <string name="rateBtnTxt" translatable="false">Đánh giá 5 sao</string>
+    <string name="rateQuestionTxt" translatable="false">Nếu bạn thích app, làm ơn hãy đánh giá 5 sao nhé</string>
 </resources>

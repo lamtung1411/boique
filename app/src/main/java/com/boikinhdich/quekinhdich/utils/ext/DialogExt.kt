@@ -23,6 +23,7 @@ import com.amuse.animalsounds.utils.admod.AdmobManager
 import com.amuse.animalsounds.utils.sharePreferences.SPKeyEnum
 import com.amuse.animalsounds.utils.sharePreferences.SharePreferencesManager
 import com.boikinhdich.quekinhdich.R
+import com.boikinhdich.quekinhdich.databinding.ViewRateAppBinding
 import com.boikinhdich.quekinhdich.databinding.ViewSettingAppBinding
 import com.boikinhdich.quekinhdich.utils.ext.getScreenSizeInches
 import com.boikinhdich.quekinhdich.utils.ext.onRateApp
@@ -180,33 +181,31 @@ interface DialogNoticeListen {
 
 fun Activity.onDialogRating(reviewManager: ReviewManager) {
     try {
-        var dialogLanguage = Dialog(this)
-        dialogLanguage.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        dialogLanguage.setContentView(R.layout.view_rate_app)
-//        val ratingBar = dialogLanguage.findViewById<RatingBar>(R.id.simpleRatingBar)
-        val edtFeedback = dialogLanguage.findViewById<EditText>(R.id.edtFeedback)
-        val btnLater = dialogLanguage.findViewById<TextView>(R.id.btnLater)
-        val viewFeedBack = dialogLanguage.findViewById<LinearLayout>(R.id.viewFeedBack)
-        val btnSubmit = dialogLanguage.findViewById<TextView>(R.id.btnSubmit)
+        var dialogRating = Dialog(this)
+        dialogRating.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        val binding = ViewRateAppBinding.inflate(layoutInflater)
+        dialogRating.setContentView(binding.root)
 
-        viewFeedBack.visibility = View.GONE
-        btnLater.setOnClickListener {
-            dialogLanguage.dismiss()
-        }
+        binding.apply {
 
-        btnSubmit.isEnabled = false
-        btnSubmit.alpha = 0.5f
-        edtFeedback.addTextChangedListener {
-            if (it!!.isEmpty()) {
-                btnSubmit.isEnabled = false
-                btnSubmit.alpha = 0.3f
-            } else {
-                btnSubmit.isEnabled = true
-                btnSubmit.alpha = 1f
+            viewFeedBack.visibility = View.GONE
+            btnLater.setOnClickListener {
+                dialogRating.dismiss()
             }
-        }
+
+            btnSubmit.isEnabled = false
+            btnSubmit.alpha = 0.5f
+//        edtFeedback.addTextChangedListener {
+//            if (it!!.isEmpty()) {
+//                btnSubmit.isEnabled = false
+//                btnSubmit.alpha = 0.3f
+//            } else {
+//                btnSubmit.isEnabled = true
+//                btnSubmit.alpha = 1f
+//            }
+//        }
 //        ratingBar.setStar(5f)
-        var rating = 0F
+            var rating = 0F
 //        ratingBar.setOnRatingChangeListener {
 //            SharePreferencesManager.getInstance().setValue(SPKeyEnum.RATE_APP, true)
 //            rating = it
@@ -218,10 +217,10 @@ fun Activity.onDialogRating(reviewManager: ReviewManager) {
 //            }
 //        }
 
-        btnSubmit.setOnClickListener {
-            if (rating >= 4) {
-                onRateApp(reviewManager)
-            } else {
+            btnSubmit.setOnClickListener {
+                if (rating >= 4) {
+                    onRateApp(reviewManager)
+                } else {
 //                FileManager.getInstance().uploadFeedBack(
 //                    this@onDialogRating,
 //                    FeedBackModel(
@@ -230,17 +229,19 @@ fun Activity.onDialogRating(reviewManager: ReviewManager) {
 //                        getCurrentDate()
 //                    )
 //                )
+                }
+                dialogRating.dismiss()
             }
-            dialogLanguage.dismiss()
         }
 
         val w: Int = if (getScreenSizeInches(this) > 7)
             (resources.displayMetrics.widthPixels * 0.6).roundToInt()
         else (resources.displayMetrics.widthPixels * 0.8).roundToInt()
         val h: Int = ViewGroup.LayoutParams.WRAP_CONTENT
-        dialogLanguage.window!!.setLayout(w, h)
-        dialogLanguage.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        dialogLanguage.show()
+        dialogRating.window!!.setLayout(w, h)
+        dialogRating.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialogRating.show()
+
     } catch (e: java.lang.Exception) {
         e.printStackTrace()
     }
