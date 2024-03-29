@@ -5,28 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/white"
-    app:carbon_cornerRadius="20dp"
     android:gravity="center|top"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    app:carbon_cornerRadius="20dp">
 
     <carbon.widget.TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/red_custom"
         android:gravity="center"
-        android:paddingVertical="12dp"
+        android:paddingVertical="10dp"
         android:textColor="@color/white"
-        android:textSize="24dp"
         tools:ignore="HardcodedText,SpUsage" />
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:fontFamily="@font/truculenta"
         android:gravity="center"
         android:text="@string/title_rate"
         android:textColor="@android:color/black"
-        android:fontFamily="@font/truculenta"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,29 +37,42 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:gravity="center"
         android:fontFamily="@font/truculenta"
+        android:gravity="center"
         android:text="@string/content_rate"
         android:textColor="@android:color/black"
         android:textSize="15sp" />
 
-<!--    <com.hedgehog.ratingbar.RatingBar-->
-<!--        android:id="@+id/simpleRatingBar"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_centerInParent="true"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:layout_marginTop="24dp"-->
-<!--        android:layout_marginBottom="24dp"-->
-<!--        app:clickable="true"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:starCount="5"-->
-<!--        app:starEmpty="@drawable/ic_end_rate"-->
-<!--        app:starFill="@drawable/ic_star_rate"-->
-<!--        app:starImageHeight="60dp"-->
-<!--        app:starImagePadding="10dp"-->
-<!--        app:starImageWidth="60dp" />-->
+    <!--    !&#45;&#45;    <com.hedgehog.ratingbar.RatingBar&ndash;&gt;-->
+    <!--        android:id="@+id/simpleRatingBar"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_centerInParent="true"-->
+    <!--        android:layout_gravity="center"-->
+    <!--        android:layout_marginTop="24dp"-->
+    <!--        android:layout_marginBottom="24dp"-->
+    <!--        app:clickable="true"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:starCount="5"-->
+    <!--        app:starEmpty="@drawable/ic_end_rate"-->
+    <!--        app:starFill="@drawable/ic_star_rate"-->
+    <!--        app:starImageHeight="60dp"-->
+    <!--        app:starImagePadding="10dp"-->
+    <!--        app:starImageWidth="60dp" />-->
+
+    <me.zhanghai.android.materialratingbar.MaterialRatingBar
+        android:id="@+id/ratingBar"
+        style="@style/Widget.MaterialRatingBar.RatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:rating="3.5"
+        app:mrb_progressBackgroundTint="@color/red_custom"
+        app:mrb_progressTint="@color/yellow"
+        app:mrb_secondaryProgressTint="@color/red_custom" />
 
     <LinearLayout
         android:id="@+id/viewFeedBack"
@@ -69,22 +81,23 @@
         android:layout_marginHorizontal="16dp"
         android:orientation="vertical">
 
-<!--        <EditText-->
-<!--            android:id="@+id/edtFeedback"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:background="@drawable/shape2"-->
-<!--            android:hint="@string/input_rate"-->
-<!--            android:minLines="3"-->
-<!--            android:gravity="top"-->
-<!--            android:paddingHorizontal="16dp"-->
-<!--            android:paddingVertical="12dp" />-->
+        <EditText
+            android:id="@+id/edtFeedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="top"
+            android:background="#DFDFDF"
+            android:hint="@string/input_rate"
+            android:minLines="3"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="12dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
             android:orientation="horizontal">
 
             <carbon.widget.TextView
@@ -93,15 +106,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
+                android:background="@color/brown"
+                android:fontFamily="@font/truculenta_bold"
                 android:gravity="center"
                 android:paddingVertical="10dp"
                 android:text="@string/close"
-                android:textSize="20sp"
                 android:textColor="@color/white"
-                android:fontFamily="@font/truculenta_bold"
+                android:textSize="20sp"
                 app:carbon_cornerRadius="10dp"
-                android:background="@color/brown"
-                app:carbon_rippleColor="@color/transparent_click"/>
+                app:carbon_rippleColor="@color/transparent_click" />
 
             <carbon.widget.TextView
                 android:id="@+id/btnSubmit"
@@ -109,15 +122,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_weight="1"
+                android:background="@color/red_custom"
+                android:fontFamily="@font/truculenta_bold"
                 android:gravity="center"
                 android:paddingVertical="10dp"
                 android:text="@string/send"
-                android:textSize="20sp"
                 android:textColor="@color/white"
-                android:fontFamily="@font/truculenta_bold"
+                android:textSize="20sp"
                 app:carbon_cornerRadius="10dp"
-                android:background="@color/red_custom"
-                app:carbon_rippleColor="@color/transparent_click"/>
+                app:carbon_rippleColor="@color/transparent_click" />
 
         </LinearLayout>
 

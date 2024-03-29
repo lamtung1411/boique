@@ -89,7 +89,7 @@
             android:textColor="#FFFFFF" />
 
         <carbon.widget.TextView
-            android:id="@+id/btnRandomQue"
+            android:id="@+id/btnXemHo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

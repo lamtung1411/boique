@@ -21,7 +21,7 @@
 //import com.amuse.animalsounds.R
 //import com.amuse.animalsounds.data.FileManager
 //import com.amuse.animalsounds.utils.sharePreferences.SPKeyEnum
-//import com.amuse.animalsounds.utils.sharePreferences.SharePreferencesManager
+//import com.boikinhdich.quekinhdich.utils.sharePreferences.SharePreferencesManager
 //import java.io.File
 //import java.io.FileWriter
 //import java.net.URLEncoder

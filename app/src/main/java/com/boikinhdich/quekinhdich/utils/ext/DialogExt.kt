@@ -2,38 +2,24 @@ package com.amuse.animalsounds.utils.ext
 
 import android.app.Activity
 import android.app.Dialog
-import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.os.SystemClock
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.widget.addTextChangedListener
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.amuse.animalsounds.utils.admod.AdmobManager
 import com.amuse.animalsounds.utils.sharePreferences.SPKeyEnum
-import com.amuse.animalsounds.utils.sharePreferences.SharePreferencesManager
-import com.boikinhdich.quekinhdich.R
+import com.boikinhdich.quekinhdich.utils.sharePreferences.SharePreferencesManager
 import com.boikinhdich.quekinhdich.databinding.ViewRateAppBinding
 import com.boikinhdich.quekinhdich.databinding.ViewSettingAppBinding
 import com.boikinhdich.quekinhdich.utils.ext.getScreenSizeInches
 import com.boikinhdich.quekinhdich.utils.ext.onRateApp
 import com.boikinhdich.quekinhdich.utils.ext.onShareApp
 import com.google.android.play.core.review.ReviewManager
-import java.util.*
 import kotlin.math.roundToInt
 
 
-fun Activity.diaLogSetting(reviewManager: ReviewManager) {
+fun Activity.diaLogSetting(reviewManager: ReviewManager, listener: ChooseLanguageListener) {
     try {
         val dialog = Dialog(this)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -43,7 +29,7 @@ fun Activity.diaLogSetting(reviewManager: ReviewManager) {
         binding.apply {
 
             btnPrivacyPolicy.setOnClickListener {
-//                listener.onTemps()
+                listener.onTemps()
                 dialog.dismiss()
             }
             btnRateUs.setOnClickListener {
@@ -195,6 +181,7 @@ fun Activity.onDialogRating(reviewManager: ReviewManager) {
 
             btnSubmit.isEnabled = false
             btnSubmit.alpha = 0.5f
+
 //        edtFeedback.addTextChangedListener {
 //            if (it!!.isEmpty()) {
 //                btnSubmit.isEnabled = false
@@ -204,18 +191,19 @@ fun Activity.onDialogRating(reviewManager: ReviewManager) {
 //                btnSubmit.alpha = 1f
 //            }
 //        }
-//        ratingBar.setStar(5f)
+
             var rating = 0F
-//        ratingBar.setOnRatingChangeListener {
-//            SharePreferencesManager.getInstance().setValue(SPKeyEnum.RATE_APP, true)
-//            rating = it
-//            if (rating >= 4) {
-//                onRateApp(reviewManager)
-//                dialogLanguage.dismiss()
-//            } else {
-//                viewFeedBack.visibility = View.VISIBLE
-//            }
-//        }
+            ratingBar.rating = 5f
+            ratingBar.setOnRatingBarChangeListener { ratingBar, fl, b ->
+//                SharePreferencesManager.getInstance().setValue(SPKeyEnum.RATE_APP, true)
+                rating = ratingBar.rating
+                if (rating >= 4) {
+                    onRateApp(reviewManager)
+                    dialogRating.dismiss()
+                } else {
+                    viewFeedBack.visibility = View.VISIBLE
+                }
+            }
 
             btnSubmit.setOnClickListener {
                 if (rating >= 4) {
@@ -312,7 +300,9 @@ fun Activity.onDialogRating(reviewManager: ReviewManager) {
 //    }
 //}
 
-//
+interface ChooseLanguageListener {
+    fun onTemps()
+}
 
 
 

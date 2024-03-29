@@ -1,7 +1,8 @@
-package com.amuse.animalsounds.utils.sharePreferences
+package com.boikinhdich.quekinhdich.utils.sharePreferences
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.amuse.animalsounds.utils.sharePreferences.SPKeyEnum
 
 val PREF_NAME = "vu_media"
 
@@ -13,7 +14,7 @@ class SharePreferencesManager {
 
         @Synchronized
         fun initializeInstance(context: Context?) {
-            this.context = context
+            Companion.context = context
             if (sInstance == null) {
                 sInstance =
                     SharePreferencesManager(
