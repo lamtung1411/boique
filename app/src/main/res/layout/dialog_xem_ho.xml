@@ -36,8 +36,8 @@
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/truculenta"
         android:text="Cách thứ nhất: Hãy bảo họ tập trung suy nghĩ vào nội dung câu hỏi trong vòng 20-30s mà bản thân mình đang gặp vấn đề hoặc đang gặp khúc mắc không biết nên xử lí, giải quyết như thế nào. Và cũng hãy bảo họ thật nghiêm túc Bạn nhé. Sau đó, Bạn trộn đêu bộ bài lên và bảo họ rút ngẫu nhiên một thẻ và xem nội dung của Quẻ đó chính là thông điệp đưa ra cho họ.
 \nCách thứ hai: Bạn bảo họ tập trung suy nghĩ trong đầu về 2 con số bất kì từ 1-64 kèm theo một câu hỏi mà họ đang quan tâm sau đó bảo họ nói cho bạn biết về con số mà họ đang nghĩ trong đầu. Sau khi đã biết được con số đó bạn hãy tìm trong Bộ thẻ 64 Quẻ Kinh Dịch rồi dựa vào Bộ thẻ để nói cho họ biết về thông điệp mà Bộ thẻ đưa ra đối với câu hỏi của họ."
@@ -47,38 +47,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
-<!--        <carbon.widget.EditText-->
-<!--            android:id="@+id/edtIdQue"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginEnd="8dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:gravity="center"-->
-<!--            android:background="#DFDFDF"-->
-<!--            app:carbon_cornerRadius="10dp"-->
-<!--            android:hint="Nhập Quẻ"-->
-<!--            android:inputType="number"-->
-<!--            android:imeOptions="actionDone"-->
-<!--            android:fontFamily="@font/truculenta_bold"-->
-<!--            android:minLines="1"-->
-<!--            android:paddingHorizontal="16dp"-->
-<!--            android:paddingVertical="12dp" />-->
-
-        <NumberPicker
-            android:id="@+id/numberPicker"
+        <Spinner
+            android:id="@+id/spinner"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_weight="1"
-            android:layout_gravity="center"
+            android:layout_height="match_parent"
             android:gravity="center"
-            android:descendantFocusability="blocksDescendants"
-            android:paddingHorizontal="16dp"
-            android:paddingVertical="12dp"/>
+            android:background="@drawable/style_spinner"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"/>
 
         <carbon.widget.TextView
             android:id="@+id/btnSelectIdQue"
@@ -101,8 +81,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="15dp"
         android:orientation="horizontal">
 

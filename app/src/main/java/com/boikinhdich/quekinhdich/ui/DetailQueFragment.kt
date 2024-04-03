@@ -22,14 +22,22 @@ import com.boikinhdich.quekinhdich.databinding.FragmentSelectQueBinding
 
 class DetailQueFragment : Fragment() {
 
+    private var _binding: FragmentDetailQueBinding? = null
+    private val binding get() = _binding!!
+
     private val contentAdapter by lazy { ContentAdapter() }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val binding = FragmentDetailQueBinding.inflate(inflater, container, false)
+    ): View {
+        _binding = FragmentDetailQueBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         binding.apply {
             val item = arguments?.getSerializable("item") as CardModel
@@ -71,7 +79,5 @@ class DetailQueFragment : Fragment() {
                 adapter = contentAdapter
             }
         }
-
-        return binding.root
     }
 }

@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_bg_detail"
-    android:layout_marginBottom="8dp"
     tools:context=".ui.MainActivity">
 
 
@@ -95,7 +94,7 @@
 
     </LinearLayout>
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -124,13 +123,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:fillViewport="true"
                 android:clipToPadding="true"
                 android:focusable="false"
                 android:nestedScrollingEnabled="false" />
 
         </LinearLayout>
 
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
     <carbon.widget.TextView
         android:id="@+id/btnBack"

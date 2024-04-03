@@ -13,8 +13,10 @@
 <!--    <string name="rateBtnTxt" translatable="false">Rate 5 stars</string>-->
 <!--    <string name="rateQuestionTxt" translatable="false">If you like our app, please rate it 5 stars</string>-->
 
-    <string name="close">Close</string>
-    <string name="send">Send</string>
+    <string name="close">Đóng</string>
+    <string name="send">Gửi</string>
+
+    <string name="truculenta_bold">truculenta_bold</string>
 
 <!--    <string name="otherAppsTitle" translatable="false">More apps</string>-->
 <!--    <string name="jezyk" translatable="false">Language</string>-->

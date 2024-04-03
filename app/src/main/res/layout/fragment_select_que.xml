@@ -114,7 +114,6 @@
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="30dp"
-        app:layoutAnimation="@anim/layout_animation_from_bottom_scale"
         app:layoutManagerOrientation="vertical"
         app:layoutManagerReverse="false"
         app:layoutManagerType="grid" />
