@@ -8,12 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.*
-import android.widget.LinearLayout
-import android.widget.TextView
 import com.boikinhdich.quekinhdich.R
-import com.boikinhdich.quekinhdich.adapter.CardAdapter
-import com.boikinhdich.quekinhdich.databinding.FragmentSelectQueBinding
 import com.boikinhdich.quekinhdich.databinding.FragmentTermsBinding
+import com.boikinhdich.quekinhdich.ui.main.FragmentListener
 import com.boikinhdich.quekinhdich.utils.ext.tryCatch
 import com.boikinhdich.quekinhdich.utils.firebaseAnalyticsScreen
 
@@ -47,15 +44,10 @@ class TermsFragment : Fragment() {
 
     }
 
-    override fun onResume() {
-        super.onResume()
-        listener?.apply { onResumeFragment("") }
-    }
 
     override fun onDestroy() {
         super.onDestroy()
         tryCatch {
-            listener?.let { it.onResumeFragment(getString(R.string.app_name)) }
             listener = null
             load = 0
         }

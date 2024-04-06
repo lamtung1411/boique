@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@drawable/ic_bg"
-    tools:context=".ui.MainActivity">
+    tools:context=".ui.SelectQueFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

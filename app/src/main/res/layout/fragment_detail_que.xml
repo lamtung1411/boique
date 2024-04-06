@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_bg_detail"
-    tools:context=".ui.MainActivity">
+    tools:context=".ui.DetailQueFragment">
 
 
     <LinearLayout
@@ -109,14 +109,18 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
+            android:layout_marginHorizontal="30dp"
             android:orientation="vertical">
 
-            <ImageView
+            <carbon.widget.ImageView
                 android:id="@+id/imgDescription"
                 android:layout_width="match_parent"
                 android:layout_height="190dp"
-                android:src="@drawable/ic_3_thuy_loi_tran" />
+                android:src="@drawable/ic_23_son_dia_bac"
+                android:scaleType="centerCrop"
+                app:carbon_stroke="@color/red_custom"
+                app:carbon_strokeWidth="2dp"
+                app:carbon_cornerRadius="10dp"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/contentRecyclerView"
@@ -126,7 +130,8 @@
                 android:fillViewport="true"
                 android:clipToPadding="true"
                 android:focusable="false"
-                android:nestedScrollingEnabled="false" />
+                android:nestedScrollingEnabled="false"
+                android:layout_marginBottom="55dp"/>
 
         </LinearLayout>
 

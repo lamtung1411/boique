@@ -9,10 +9,12 @@ import android.graphics.Point
 import android.net.Uri
 import android.os.Build
 import android.util.DisplayMetrics
+import androidx.fragment.app.Fragment
 import android.util.Log
 import android.view.Display
 import android.view.View
 import android.view.WindowManager
+import androidx.core.os.bundleOf
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
@@ -291,7 +293,7 @@ fun tryCatch(onTry: (() -> Unit)) {
 //}
 //
 //
-//inline fun <reified T : Fragment> newInstance(vararg params: Pair<String, Any>): T =
-//    T::class.java.newInstance().apply {
-//        arguments = bundleOf(*params)
-//    }
+inline fun <reified T : Fragment> newInstance(vararg params: Pair<String, Any>): T =
+    T::class.java.newInstance().apply {
+        arguments = bundleOf(*params)
+    }

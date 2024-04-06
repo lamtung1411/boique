@@ -1,11 +1,10 @@
 package com.boikinhdich.quekinhdich.ui
 
 import android.app.Activity
-import android.app.AlertDialog
 import android.app.Dialog
+import android.content.Context
 import android.graphics.Color
 import android.graphics.Point
-import android.graphics.Typeface
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
@@ -23,11 +22,13 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.amuse.animalsounds.utils.ext.ChooseLanguageListener
 import com.amuse.animalsounds.utils.ext.diaLogSetting
 import com.boikinhdich.quekinhdich.R
-import com.boikinhdich.quekinhdich.adapter.CardAdapter
+import com.boikinhdich.quekinhdich.ui.adapter.CardAdapter
 import com.boikinhdich.quekinhdich.adapter.CardModel
-import com.boikinhdich.quekinhdich.adapter.model.fromJsonArray
+import com.boikinhdich.quekinhdich.data.model.fromJsonArray
 import com.boikinhdich.quekinhdich.databinding.DialogXemHoBinding
 import com.boikinhdich.quekinhdich.databinding.FragmentSelectQueBinding
+import com.boikinhdich.quekinhdich.ui.main.FragmentListener
+import com.boikinhdich.quekinhdich.ui.main.MainActivity
 import com.google.android.play.core.review.ReviewManager
 import com.google.android.play.core.review.testing.FakeReviewManager
 import java.util.Random
@@ -38,12 +39,17 @@ class SelectQueFragment : Fragment() {
     private var _binding: FragmentSelectQueBinding? = null
     private val binding get() = _binding!!
 
-    lateinit var mainActivity: MainActivity
-    lateinit var detailQueFragment: DetailQueFragment
+    var listener: FragmentListener? = null
     private var reviewManager: ReviewManager? = null
 
     private val cardAdapter by lazy { CardAdapter() }
     private var isShowAnimatonFisrt = true
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is FragmentListener)
+            listener = context as FragmentListener
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -57,8 +63,6 @@ class SelectQueFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        detailQueFragment = DetailQueFragment()
-        mainActivity = activity as MainActivity
         reviewManager = FakeReviewManager(context)
 
         binding.apply {
@@ -66,7 +70,6 @@ class SelectQueFragment : Fragment() {
 
             cardRecylerview.apply {
                 layoutManager = GridLayoutManager(context, 8)
-                setHasFixedSize(true)
                 adapter = cardAdapter
 
                 if (isShowAnimatonFisrt)
@@ -98,17 +101,13 @@ class SelectQueFragment : Fragment() {
             }
 
             btnInstruct.setOnClickListener {
-                mainActivity.switchFragment(TutorialQueFragment(), "TutorialQueFragment", true)
+                listener?.onTutorialQueFragment()
             }
 
             btnSetting.setOnClickListener {
-                mainActivity.diaLogSetting(reviewManager!!, object : ChooseLanguageListener {
+                requireActivity().diaLogSetting(reviewManager!!, object : ChooseLanguageListener {
                     override fun onTemps() {
-                        mainActivity.switchFragment(
-                            TermsFragment(),
-                            "TermsFragment",
-                            true
-                        )
+                        listener?.onTermsFragment()
                     }
                 })
             }
@@ -186,11 +185,7 @@ class SelectQueFragment : Fragment() {
     }
 
     private fun setItemDetailQue(item: CardModel) {
-        val bundle = Bundle()
-        bundle.putSerializable("item", item)
-
-        detailQueFragment.arguments = bundle
-        mainActivity.switchFragment(detailQueFragment, "DetailQueFragment", true)
+        listener?.onDetailQueFragment(item)
     }
 
     private fun getScreenSizeInches(activity: Activity): Double {

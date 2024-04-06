@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/ic_bg_detail"
     android:gravity="center"
-    tools:context=".ui.MainActivity">
+    tools:context=".ui.TutorialQueFragment">
 
     <TextView
         android:id="@+id/title"
@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="80dp"
         android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +39,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="24dp"
+            android:layout_marginHorizontal="30dp"
+
             android:orientation="vertical">
 
             <TextView

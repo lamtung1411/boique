@@ -68,8 +68,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:clickable="true"
-        android:rating="3.5"
+        android:rating="3"
         app:mrb_progressBackgroundTint="@color/red_custom"
         app:mrb_progressTint="@color/yellow"
         app:mrb_secondaryProgressTint="@color/red_custom" />
