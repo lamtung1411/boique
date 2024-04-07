@@ -1,161 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_bg_detail"
+    android:background="@color/brown_bg"
     tools:context=".ui.DetailQueFragment">
 
-
-    <LinearLayout
-        android:id="@+id/title_linear"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
-        android:layout_marginTop="30dp"
+        android:layout_height="match_parent"
         android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/tvIdQue"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/ic_but_tich"
-            android:fontFamily="@font/thuphap2"
-            android:paddingLeft="12dp"
-            android:paddingTop="7dp"
-            android:text="9"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/imgSmall"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="5dp"
-            android:src="@drawable/ic_3" />
-
-        <TextView
-            android:id="@+id/tvLoaiQue"
-            android:layout_width="30dp"
-            android:layout_height="45dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="5dp"
-            android:background="@drawable/ic_khung"
-            android:fontFamily="@font/truculenta"
-            android:gravity="center"
-            android:text="Quẻ\ndai\nHung"
-            android:textColor="@android:color/black"
-            android:textSize="10sp"
-            android:textStyle="bold" />
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:background="@drawable/ic_khung_bg_red">
 
         <LinearLayout
+            android:id="@+id/title_linear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvIdQue"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/ic_but_tich"
+                android:fontFamily="@font/thuphap2"
+                android:paddingLeft="12dp"
+                android:paddingTop="7dp"
+                android:text="9"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imgSmall"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/ic_3" />
+
+            <TextView
+                android:id="@+id/tvLoaiQue"
+                android:layout_width="30dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/ic_khung"
+                android:fontFamily="@font/truculenta"
+                android:gravity="center"
+                android:text="Quẻ\ndai\nHung"
+                android:textColor="@android:color/black"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="10dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvTenQue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/thu_phap"
+                    android:text="Phong trach trung phu"
+                    android:textColor="@color/red"
+                    android:textSize="40sp" />
+
+                <TextView
+                    android:id="@+id/tvDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Vui lòng chọn thẻ bên dưới"
+                    android:textColor="@android:color/black"
+                    android:textSize="9sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/ic_am_duong" />
+
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:fillViewport="true"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_linear">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:orientation="vertical">
+
+                <carbon.widget.ImageView
+                    android:id="@+id/imgDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:src="@drawable/ic_23_son_dia_bac"
+                    android:scaleType="centerCrop"
+                    app:carbon_stroke="@color/red_custom"
+                    app:carbon_strokeWidth="2dp"
+                    app:carbon_cornerRadius="10dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/contentRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fillViewport="true"
+                    android:clipToPadding="true"
+                    android:focusable="false"
+                    android:nestedScrollingEnabled="false"
+                    android:layout_marginBottom="55dp"/>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <carbon.widget.TextView
+            android:id="@+id/btnBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginHorizontal="5dp"
+            android:background="@color/red_custom"
+            android:fontFamily="@font/truculenta_bold"
             android:gravity="center"
-            android:orientation="vertical">
+            android:paddingHorizontal="40dp"
+            android:paddingVertical="10dp"
+            android:text="Quay lại"
+            android:textAllCaps="true"
+            android:textColor="#ffff"
+            android:textSize="18sp"
+            app:carbon_cornerRadius="10dp"
+            app:carbon_rippleColor="@color/transparent_click"
+            android:layout_marginBottom="25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-            <TextView
-                android:id="@+id/tvTenQue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="@font/thu_phap"
-                android:text="Phong trach trung phu"
-                android:textColor="@color/red"
-                android:textSize="40sp" />
-
-            <TextView
-                android:id="@+id/tvDescription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="Vui lòng chọn thẻ bên dưới"
-                android:textColor="@android:color/black"
-                android:textSize="9sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:src="@drawable/ic_am_duong" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    </LinearLayout>
 
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/scrollView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="10dp"
-        android:fillViewport="true"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_linear">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="30dp"
-            android:orientation="vertical">
-
-            <carbon.widget.ImageView
-                android:id="@+id/imgDescription"
-                android:layout_width="match_parent"
-                android:layout_height="190dp"
-                android:src="@drawable/ic_23_son_dia_bac"
-                android:scaleType="centerCrop"
-                app:carbon_stroke="@color/red_custom"
-                app:carbon_strokeWidth="2dp"
-                app:carbon_cornerRadius="10dp"/>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/contentRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fillViewport="true"
-                android:clipToPadding="true"
-                android:focusable="false"
-                android:nestedScrollingEnabled="false"
-                android:layout_marginBottom="55dp"/>
-
-        </LinearLayout>
-
-    </androidx.core.widget.NestedScrollView>
-
-    <carbon.widget.TextView
-        android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@color/red_custom"
-        android:fontFamily="@font/truculenta_bold"
-        android:gravity="center"
-        android:paddingHorizontal="40dp"
-        android:paddingVertical="10dp"
-        android:text="Quay lại"
-        android:textAllCaps="true"
-        android:textColor="#ffff"
-        android:textSize="18sp"
-        app:carbon_cornerRadius="10dp"
-        app:carbon_rippleColor="@color/transparent_click"
-        android:layout_marginBottom="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

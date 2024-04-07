@@ -5,18 +5,20 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.amuse.animalsounds.utils.admod.AdmobManager
+import com.amuse.animalsounds.utils.ext.diaLogSetting
 import com.amuse.animalsounds.utils.ext.hideSoftKeyboard
 import com.boikinhdich.quekinhdich.R
 import com.boikinhdich.quekinhdich.adapter.CardModel
 import com.boikinhdich.quekinhdich.databinding.ActivityMainBinding
 import com.boikinhdich.quekinhdich.ui.DetailQueFragment
 import com.boikinhdich.quekinhdich.ui.SelectQueFragment
-import com.boikinhdich.quekinhdich.ui.TermsFragment
 import com.boikinhdich.quekinhdich.ui.TutorialQueFragment
 import com.boikinhdich.quekinhdich.utils.ext.makeStatusBarTransparent
 import com.boikinhdich.quekinhdich.utils.ext.tryCatch
 import com.boikinhdich.quekinhdich.utils.versionAppFirebase
 import com.google.android.gms.ads.AdListener
+import com.google.android.play.core.review.ReviewManager
+import com.google.android.play.core.review.testing.FakeReviewManager
 import java.util.Timer
 
 
@@ -26,7 +28,7 @@ class MainActivity : AppCompatActivity(), FragmentListener {
     private var isAddBanner = false
     val TAG = "MainActivity"
     private var timerAds: Timer? = null
-
+    private var reviewManager: ReviewManager? = null
     private lateinit var binding: ActivityMainBinding // View Binding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,6 +36,8 @@ class MainActivity : AppCompatActivity(), FragmentListener {
         // Khởi tạo binding
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        reviewManager = FakeReviewManager(this)
 
         binding.apply {
 
@@ -83,7 +87,7 @@ class MainActivity : AppCompatActivity(), FragmentListener {
 //                    showNoiceUpdateApp(this)
             }
 
-            switchFragment(SelectQueFragment(), "SelectQueFragment", true)
+            switchFragment(SelectQueFragment(), "SelectQueFragment", false)
         }
     }
 
@@ -95,12 +99,12 @@ class MainActivity : AppCompatActivity(), FragmentListener {
         switchFragment(DetailQueFragment.newInstance(item), "DetailQueFragment", true)
     }
 
-    override fun onTermsFragment() {
-        switchFragment(TermsFragment(), "TermsFragment", true)
-    }
-
     override fun onTutorialQueFragment() {
         switchFragment(TutorialQueFragment(), "TermsFragment", true)
+    }
+
+    override fun onDialogSetting() {
+       diaLogSetting(reviewManager!!)
     }
 
     fun switchFragment(

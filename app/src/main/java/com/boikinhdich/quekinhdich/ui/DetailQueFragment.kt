@@ -1,6 +1,7 @@
 package com.boikinhdich.quekinhdich.ui
 
 import android.content.Context
+import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
 import android.text.Spannable
@@ -13,6 +14,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -44,14 +46,17 @@ class DetailQueFragment : Fragment() {
 
     private val contentAdapter by lazy { ContentAdapter() }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        item = arguments?.getSerializable("item") as CardModel
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentDetailQueBinding.inflate(inflater, container, false)
-
-        item = arguments?.getSerializable("item") as CardModel
         return binding.root
     }
 
@@ -60,7 +65,11 @@ class DetailQueFragment : Fragment() {
 
         binding.apply {
             val idImageSmall =
-                resources.getIdentifier("ic_${item!!.id}", "drawable", requireActivity().packageName)
+                resources.getIdentifier(
+                    "ic_${item!!.id}",
+                    "drawable",
+                    requireActivity().packageName
+                )
 
             val title = item!!.title.toLowerCase()
             val nameDescription = VNCharacterUtils.removeAccent(title).lowercase()
@@ -77,6 +86,15 @@ class DetailQueFragment : Fragment() {
 
             tvIdQue.text = item!!.id.toString()
             tvLoaiQue.text = item!!.type
+            Log.e("tvLoaiQue", tvLoaiQue.toString())
+            if (tvLoaiQue.text == "Quẻ\nCát" || tvLoaiQue.text == "Bình\nHòa" || tvLoaiQue.text == "Quẻ\nCát\nHanh") {
+                tvLoaiQue.setTextColor(ContextCompat.getColor(requireContext(), R.color.red))
+                tvLoaiQue.setBackgroundResource(R.drawable.ic_khung_red)
+            } else {
+                tvLoaiQue.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+                tvLoaiQue.setBackgroundResource(R.drawable.ic_khung)
+            }
+
             tvTenQue.text = item!!.title
             tvDescription.text = item!!.description
 

@@ -1,130 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:background="@drawable/ic_bg"
+    android:background="@color/red_custom"
     tools:context=".ui.SelectQueFragment">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:layout_marginHorizontal="15dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/arizonia_regular"
-            android:text="Vui lòng chọn thẻ bên dưới"
-            android:textColor="#EDB276"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <carbon.widget.ImageView
-            android:id="@+id/btnSetting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_setting"
-            android:padding="10dp"
-            app:carbon_rippleColor="@color/transparent_click"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginHorizontal="20dp"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:background="@drawable/ic_khung_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-
-        <carbon.widget.TextView
-            android:id="@+id/btnInstruct"
-            android:layout_width="0dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="18sp"
-            android:fontFamily="@font/truculenta_bold"
-            app:carbon_cornerRadius="10dp"
-            android:background="@color/brown"
-            app:carbon_rippleColor="@color/transparent_click"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
             android:gravity="center"
-            android:text="Hướng dẫn"
-            android:padding="10dp"
-            android:textAllCaps="true"
-            android:textColor="#FFFFFF" />
+            android:orientation="horizontal">
 
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arizonia_regular"
+                android:text="Vui lòng chọn thẻ bên dưới"
+                android:textColor="#EDB276"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <carbon.widget.TextView
-            android:id="@+id/btnPalmOff"
-            android:layout_width="0dp"
+            <carbon.widget.ImageView
+                android:id="@+id/btnSetting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:src="@drawable/ic_setting"
+                app:carbon_rippleColor="@color/transparent_click"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginHorizontal="10dp"
-            android:textSize="18sp"
-            android:fontFamily="@font/truculenta_bold"
-            app:carbon_cornerRadius="10dp"
-            android:background="@color/brown"
-            app:carbon_rippleColor="@color/transparent_click"
-            android:gravity="center"
-            android:text="Tráo quẻ"
-            android:padding="10dp"
-            android:textAllCaps="true"
-            android:textColor="#FFFFFF" />
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
-        <carbon.widget.TextView
-            android:id="@+id/btnXemHo"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="18sp"
-            android:fontFamily="@font/truculenta_bold"
-            app:carbon_cornerRadius="10dp"
-            android:background="@color/brown"
-            app:carbon_rippleColor="@color/transparent_click"
-            android:gravity="center"
-            android:text="Xem hộ"
-            android:padding="10dp"
-            android:textAllCaps="true"
-            android:textColor="#FFFFFF" />
+
+            <carbon.widget.TextView
+                android:id="@+id/btnInstruct"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/brown"
+                android:fontFamily="@font/truculenta_bold"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Hướng dẫn"
+                android:textAllCaps="true"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:carbon_cornerRadius="10dp"
+                app:carbon_rippleColor="@color/transparent_click" />
+
+
+            <carbon.widget.TextView
+                android:id="@+id/btnPalmOff"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_weight="1"
+                android:background="@color/brown"
+                android:fontFamily="@font/truculenta_bold"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Tráo quẻ"
+                android:textAllCaps="true"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:carbon_cornerRadius="10dp"
+                app:carbon_rippleColor="@color/transparent_click" />
+
+            <carbon.widget.TextView
+                android:id="@+id/btnXemHo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/brown"
+                android:fontFamily="@font/truculenta_bold"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Xem hộ"
+                android:textAllCaps="true"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:carbon_cornerRadius="10dp"
+                app:carbon_rippleColor="@color/transparent_click" />
+
+        </LinearLayout>
+
+        <com.mlsdev.animatedrv.AnimatedRecyclerView
+            android:id="@+id/cardRecylerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            app:animationDuration="600"
+            app:layoutManagerOrientation="vertical"
+            app:layoutManagerReverse="false"
+            app:layoutManagerType="grid" />
 
     </LinearLayout>
 
-    <com.mlsdev.animatedrv.AnimatedRecyclerView
-        android:id="@+id/cardRecylerview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:animationDuration="600"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="30dp"
-        app:layoutManagerOrientation="vertical"
-        app:layoutManagerReverse="false"
-        app:layoutManagerType="grid" />
 
-
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/recyclerView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginHorizontal="20dp"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        tools:listitem="@layout/list_item" />-->
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

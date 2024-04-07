@@ -2,8 +2,10 @@ package com.amuse.animalsounds.utils.ext
 
 import android.app.Activity
 import android.app.Dialog
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.net.Uri
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
@@ -19,7 +21,7 @@ import com.google.android.play.core.review.ReviewManager
 import kotlin.math.roundToInt
 
 
-fun Activity.diaLogSetting(reviewManager: ReviewManager, listener: ChooseLanguageListener) {
+fun Activity.diaLogSetting(reviewManager: ReviewManager) {
     try {
         val dialog = Dialog(this)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -29,7 +31,10 @@ fun Activity.diaLogSetting(reviewManager: ReviewManager, listener: ChooseLanguag
         binding.apply {
 
             btnPrivacyPolicy.setOnClickListener {
-                listener.onTemps()
+//                listener.onTemps()
+                val url = "https://sites.google.com/view/animal-sound24/trang-ch%E1%BB%A7"
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                startActivity(intent)
                 dialog.dismiss()
             }
             btnRateUs.setOnClickListener {
@@ -45,6 +50,9 @@ fun Activity.diaLogSetting(reviewManager: ReviewManager, listener: ChooseLanguag
 //            }
 
             btnMoreApps.setOnClickListener {
+                val url = "https://play.google.com/store/apps/developer?id=Pham+Van+Dai&hl=vi-VN"
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                startActivity(intent)
                 dialog.dismiss()
             }
 
