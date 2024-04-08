@@ -65,6 +65,10 @@ class MainActivity : AppCompatActivity(), FragmentListener {
         }
     }
 
+    override fun onSelectQueFragment() {
+        switchFragment(SelectQueFragment(), "SelectQueFragment", true)
+    }
+
     override fun onDetailQueFragment(item: CardModel) {
         switchFragment(DetailQueFragment.newInstance(item), "DetailQueFragment", true)
     }

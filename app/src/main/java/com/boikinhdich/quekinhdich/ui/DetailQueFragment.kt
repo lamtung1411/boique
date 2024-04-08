@@ -86,6 +86,7 @@ class DetailQueFragment : Fragment() {
 
             tvIdQue.text = item!!.id.toString()
             tvLoaiQue.text = item!!.type
+
             Log.e("tvLoaiQue", tvLoaiQue.toString())
             if (tvLoaiQue.text == "Quẻ\nCát" || tvLoaiQue.text == "Bình\nHòa" || tvLoaiQue.text == "Quẻ\nCát\nHanh") {
                 tvLoaiQue.setTextColor(ContextCompat.getColor(requireContext(), R.color.red))

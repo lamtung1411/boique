@@ -1,3 +1,5 @@
+package com.boikinhdich.quekinhdich.ui
+
 import android.app.Dialog
 import android.content.Context
 import android.graphics.Color
@@ -9,31 +11,23 @@ import android.view.Window
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import com.boikinhdich.quekinhdich.R
-import com.boikinhdich.quekinhdich.adapter.CardModel
 import com.boikinhdich.quekinhdich.databinding.DialogXemHoBinding
-import com.boikinhdich.quekinhdich.ui.main.FragmentListener
-import kotlin.random.Random
+import java.util.Random
 
-class OpenDialogXemHo(private val items: ArrayList<CardModel>, private val context: Context) {
-    private var dialogXemHo: Dialog? = null
-    private lateinit var binding: DialogXemHoBinding
+class DialogXemHo : Dialog {
 
-    private var dialogListener: DialogListener? = null
+    private var listener: DialogListener? = null
 
-    fun setDialogListener(listener: DialogListener) {
-        dialogListener = listener
-    }
-
-
-    fun showDialog() {
-        dialogXemHo = Dialog(context)
-        dialogXemHo?.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        binding = DialogXemHoBinding.inflate(LayoutInflater.from(context))
-        dialogXemHo?.setContentView(binding.root)
+    constructor(context: Context) : super(context) {
+        requestWindowFeature(Window.FEATURE_NO_TITLE)
+        val binding = DialogXemHoBinding.inflate(LayoutInflater.from(context))
+        setContentView(binding.root)
 
         binding.apply {
+
             val spinnerData = (1..64).map { it.toString() }
-            val adapter = ArrayAdapter(context, R.layout.style_text_spinner, spinnerData)
+            val adapter =
+                ArrayAdapter(context, R.layout.style_text_spinner, spinnerData)
             adapter.setDropDownViewResource(R.layout.spinner_dropdown_item)
 
             spinner.adapter = adapter
@@ -45,7 +39,7 @@ class OpenDialogXemHo(private val items: ArrayList<CardModel>, private val conte
                     parent: AdapterView<*>?,
                     view: View?,
                     position: Int,
-                    id: Long
+                    id: Long,
                 ) {
                     val selectedItem = spinnerData[position]
                     // Xử lý khi một mục được chọn
@@ -58,37 +52,35 @@ class OpenDialogXemHo(private val items: ArrayList<CardModel>, private val conte
             }
 
             btnSelectIdQue.setOnClickListener {
-                for (item in items) {
-                    if (item.id == idQue)
-                        dialogListener?.onItemSelected(item)
-                }
-                dialogXemHo?.dismiss()
+                listener?.onNumber(idQue)
+                dismiss()
             }
 
             btnClose.setOnClickListener {
-                dialogXemHo?.dismiss()
+                dismiss()
             }
 
             btnRandomQue.setOnClickListener {
-                val random = Random
+                val random = Random()
                 val randomNumber = random.nextInt(64) + 1
-
-                for (item in items) {
-                    if (item.id == randomNumber)
-                        dialogListener?.onItemSelected(item)
-                }
-                dialogXemHo?.dismiss()
+                listener?.onNumber(randomNumber)
+                dismiss()
             }
         }
 
+
         val w: Int = ViewGroup.LayoutParams.WRAP_CONTENT
         val h: Int = ViewGroup.LayoutParams.WRAP_CONTENT
-        dialogXemHo?.window?.setLayout(w, h)
-        dialogXemHo?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        dialogXemHo?.show()
+        window!!.setLayout(w, h)
+        window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        show()
+    }
+
+    fun setListener(listener: DialogListener) {
+        this.listener = listener
     }
 
     interface DialogListener {
-        fun onItemSelected(item: CardModel)
+        fun onNumber(idQue: Int)
     }
 }

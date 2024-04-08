@@ -1,6 +1,5 @@
 package com.boikinhdich.quekinhdich.ui
 
-import OpenDialogXemHo
 import android.app.Dialog
 import android.content.Context
 import android.graphics.Color
@@ -26,7 +25,7 @@ import com.google.android.play.core.review.ReviewManager
 import com.google.android.play.core.review.testing.FakeReviewManager
 import java.util.Random
 
-class SelectQueFragment : Fragment(), OpenDialogXemHo.DialogListener {
+class SelectQueFragment : Fragment() {
 
     private var _binding: FragmentSelectQueBinding? = null
     private val binding get() = _binding!!
@@ -75,7 +74,7 @@ class SelectQueFragment : Fragment(), OpenDialogXemHo.DialogListener {
                 setItems(items)
                 setOnItemClickListener(object : CardAdapter.OnItemClickListener {
                     override fun onItemClick(position: Int) {
-                        listener?.onDetailQueFragment(items[position])
+                        setItemDetailQue(items[position])
                     }
                 })
             }
@@ -96,11 +95,16 @@ class SelectQueFragment : Fragment(), OpenDialogXemHo.DialogListener {
             }
 
             btnXemHo.setOnClickListener {
-                val openDialogXemHo = OpenDialogXemHo(items, requireContext())
-                openDialogXemHo.setDialogListener(this@SelectQueFragment)
-                openDialogXemHo.showDialog()
+                val dialogXemHo = DialogXemHo(requireContext())
+                dialogXemHo.setListener(object : DialogXemHo.DialogListener {
+                    override fun onNumber(idQue: Int) {
+                        for (item in items) {
+                            if (item.id == idQue)
+                                setItemDetailQue(item)
+                        }
+                    }
+                })
             }
-
         }
     }
 
@@ -112,9 +116,8 @@ class SelectQueFragment : Fragment(), OpenDialogXemHo.DialogListener {
         binding!!.cardRecylerview.layoutAnimation = anim
     }
 
-    override fun onItemSelected(item: CardModel) {
+    private fun setItemDetailQue(item: CardModel) {
         listener?.onDetailQueFragment(item)
     }
-
 
 }

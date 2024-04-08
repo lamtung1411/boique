@@ -39,10 +39,10 @@
         android:layout_marginHorizontal="10dp"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/truculenta"
-        android:text="Cách thứ nhất: Hãy bảo họ tập trung suy nghĩ vào nội dung câu hỏi trong vòng 20-30s mà bản thân mình đang gặp vấn đề hoặc đang gặp khúc mắc không biết nên xử lí, giải quyết như thế nào. Và cũng hãy bảo họ thật nghiêm túc Bạn nhé. Sau đó, Bạn trộn đêu bộ bài lên và bảo họ rút ngẫu nhiên một thẻ và xem nội dung của Quẻ đó chính là thông điệp đưa ra cho họ.
-\nCách thứ hai: Bạn bảo họ tập trung suy nghĩ trong đầu về 2 con số bất kì từ 1-64 kèm theo một câu hỏi mà họ đang quan tâm sau đó bảo họ nói cho bạn biết về con số mà họ đang nghĩ trong đầu. Sau khi đã biết được con số đó bạn hãy tìm trong Bộ thẻ 64 Quẻ Kinh Dịch rồi dựa vào Bộ thẻ để nói cho họ biết về thông điệp mà Bộ thẻ đưa ra đối với câu hỏi của họ."
+        android:text="Cách thứ nhất: Hãy bảo họ tập trung suy nghĩ vào nội dung câu hỏi trong vòng 20-30s mà bản thân mình đang gặp vấn đề hoặc đang gặp khúc mắc không biêt nên xử lí, giải quyêt như thê nào. Và cũng hãy bảo họ thật nghiêm túc Bạn nhé. Sau đo, Nhấn nút XEM HỘ và chọn nút RÚT QUẺ NGẪU NHIÊN và xem nội dung của Quẻ đó chính là thông điệp đưa ra cho họ.
+        \nCách thứ hai: Bạn bảo họ tập trung suy nghĩ trong đầu về 2 con số bất kì từ 1-64 kèm theo một câu hỏi mà họ đang quan tâm sau đó bảo họ nói cho bạn biết về con số mà họ đang nghĩ trong đầu. Sau khi đã biết được con số đó bạn Nhấn nút XEM HỘ và chọn con số trong ô số và nhấn nút RÚT QUẺ ĐÃ CHỌN để tìm trong quẻ App 64 Quẻ để nói cho họ biết về thông điệp mà quẻ đưa ra đối với câu hỏi của họ."
         android:textColor="@android:color/black"
-        android:textSize="15sp" />
+        android:textSize="17sp" />
 
     <LinearLayout
         android:layout_width="match_parent"

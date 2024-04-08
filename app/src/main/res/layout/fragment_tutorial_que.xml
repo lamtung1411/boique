@@ -22,9 +22,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:fontFamily="@font/alegreya"
+            android:fontFamily="@font/truculenta"
+            android:textStyle="bold"
             android:gravity="center"
-            android:text="Lưu ý &quot;khi sử dụng&quot;"
+            android:text="Hướng dẫn sử dụng"
             android:textColor="@android:color/black"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -48,65 +49,101 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="30dp"
-
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Lưu ý 1: Trong một quẻ sẽ có 14 vấn đề dự đoán khác nhau. Tuy nhiên, khi rút quẻ chỉ xem một nội dung duy nhật nà trước khi rút quẻ Bạn nghĩ đến vấn đề đó chứ không phải xem tất cả ý nghĩa của 14 nội dung trong quẻ.
-\n\nLưu ý 2: Đối với cùng một câu hỏi không nên rút quẻ 2 lần để hỏi vì nếu làm như vậy sẽ mất đi sự linh ứng dẫn đến thông điệp đưa ra không chính xác do quá lạm dụng. Bạn có thể hỏi nhiều câu hỏi khác nhau tại một thời điểm, và nên nhớ sau mỗi câu hỏi nên trộn đều bộ thẻ và sau đó làm lại như
-Bước1 Bạn nhé.
-Cùng với sự đồng hành của Bộ thẻ 64
-Quẻ Kinh Dịch. Tôi chúc Bạn sẽ đưa ra được những quyết định sáng suốt trong cuộc sống."
+                    android:fontFamily="@font/truculenta"
+                    android:text="Trong cuộc sống, ai cũng sẽ có lúc gặp phải những tinh huống khiến bản thân minh không biết phải làm như thế nào? Không biết phải xử lí ra sao cho hợp lí. Hỏi người này, người khác thì không phải ai cũng sẵn sàng chia sẻ với
+Bạn. Trong những trường hợp như vậy Bạn có thể sử dụng App 64 Quẻ Kinh Dịch để đưa ra những lời khuyên cho bản thân
+minh, de co nhurng quyet dinh
+đúng đắn hơn khi giải quyết vấn đề. Kinh Dịch là một bộ môn dự đoán học với mức độ ứng nghiệm khá cao.\n"
                     android:textColor="@android:color/black"
-                    android:textSize="14sp" />
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/truculenta"
+                    android:text="Ngày nay, Kinh Dịch được ứng dụng khá rộng rãi trong cuộc sống như dự đoán người mất tích, dự đoán tài vận, dự đoán bệnh tật, hôn nhân,.... và rất nhiều lĩnh vực khác trong cuộc sống.
+Tuy nhiên, không phải ai cũng có thể theo học được bộ môn Kinh Dịch vì kiến thức nó rất rộng lớn. Để đơn giản hoa xem Kinh Dịch (Dự doan học va giúp nhiều người có thể tiếp cận được đến với bộ môn Kinh Dịch này.App 64 Quẻ Kinh Dịch đã biên soạn lại 64 quẻ được cổ nhân để lại. Có thể nói bộ thẻ này phản ánh hầu hết các vấn đề chính xung quanh cuộc sống của mỗi chúng ta. Hi vọng rằng Bộ thẻ 64 Quẻ Kinh Dịch sẽ giúp Bạn có được những quyết định đúng đắn trong cuộc sống, để Bạn có một cuộc sống tốt đẹp hơn.\n"
+                    android:textColor="@android:color/black"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Lưu ý &quot;khi sử dụng&quot;"
+                    android:fontFamily="@font/truculenta"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/truculenta"
+                    android:text="Lưu ý 1: Trong một quẻ sẽ có 14 vấn đề dự đoán khác nhau. Tuy nhiên, khi rút quẻ chỉ xem một nội dung duy nhật mà trước khi rút quẻ. Bạn nghĩ đến vấn đề đó chứ không phải xem tất cả ý nghĩa của 14 nội dung trong quẻ.
+\nLưu ý 2: Đối với cùng một câu hỏi không nên rút quẻ 2 lần để hỏi vì nếu làm như vậy sẽ mất đi sự linh ứng dẫn đến thông điệp đưa ra không chính xác do quá lạm dụng. Bạn có thể hỏi nhiều câu hỏi khác nhau tại một thời điểm, và nên nhớ sau mỗi câu hỏi nên trộn đều bộ thẻ và sau đó làm lại như
+Bước1 Bạn nhé.\n\nCùng với sự đồng hành của App 64 Quẻ. Tôi chúc Bạn sẽ đưa ra được những quyết định sáng suốt trong cuộc sống."
+                    android:textColor="@android:color/black"
+                    android:textSize="17sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
-                    android:fontFamily="@font/alegreya"
+                    android:fontFamily="@font/truculenta"
                     android:gravity="center"
                     android:text="Khi xem cho &quot;bản thân&quot;"
                     android:textColor="@android:color/black"
                     android:textSize="20sp"
-                    android:textStyle="italic" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
+                    android:fontFamily="@font/truculenta"
                     android:text="Bước 1: Tập trung suy nghĩ vào nôi dung câu hỏi trong vòng 20-30s mà bản thân mình đang gặp vấn đề hoặc đang gặp khúc mắc không biết nên xử
 Ií, giải quyêt như thê nào. Nên nhớ rằng Bạn càng tập trung nghiêm túc bao nhiêu thì mức độ linh ứng càng cao bấy nhiêu.
-\n\nBước 2: Sau đó, trộn đều bộ bài lên và rút ngẫu nhiên một thẻ và xem nội dung của Quẻ đó chính là thông điệp đưa ra cho Bạn đối với câu hỏi đó."
+\nBước 2: Sau đó, nhấn nút tráo quẻ và chọn ngẫu nhiên một thẻ và xem nội dung của Quẻ đó chính là thông điệp đưa ra cho Bạn đối với câu hỏi đó."
                     android:textColor="@android:color/black"
-                    android:textSize="14sp" />
+                    android:textSize="17sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
-                    android:fontFamily="@font/alegreya"
+                    android:fontFamily="@font/truculenta"
                     android:gravity="center"
                     android:text="Khi xem cho &quot;người khác&quot;"
                     android:textColor="@android:color/black"
                     android:textSize="20sp"
-                    android:textStyle="italic" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginVertical="10dp"
-                    android:text="Cách thứ nhất: Hãy bảo họ tập trung suy nghĩ vào nội dung câu hỏi trong vòng 20-30s mà bản thân mình đang gặp vấn đề hoặc đang gặp khúc mắc không biêt nên xử lí, giải quyêt như thê nào. Và cũng hãy bảo họ thật nghiêm túc Bạn nhé. Sau đo, Bạn trộn đều bộ bài lên và bảo họ rút ngẫu nhiên một thẻ và xem nội dung của Quẻ đó chính là thông điệp đưa ra cho họ.
-            \n\nCách thứ hai: Bạn bảo họ tập trung suy nghĩ trong đầu về 2 con số bất kì từ 1-64 kèm theo một câu hỏi mà họ đang quan tâm sau đó bảo họ nói cho bạn biết về con số mà họ đang nghĩ trong đầu. Sau khi đã biết được con số đó bạn hãy tìm trong Bộ thẻ 64 Quẻ Kinh Dịch rồi dựa vào Bộ thẻ để nói cho họ biết về thông điệp mà Bộ thẻ đưa ra đối với câu hỏi của họ."
+                    android:fontFamily="@font/truculenta"
+                    android:text="Cách thứ nhất: Hãy bảo họ tập trung suy nghĩ vào nội dung câu hỏi trong vòng 20-30s mà bản thân mình đang gặp vấn đề hoặc đang gặp khúc mắc không biêt nên xử lí, giải quyêt như thê nào. Và cũng hãy bảo họ thật nghiêm túc Bạn nhé. Sau đo, Nhấn nút XEM HỘ và chọn nút RÚT QUẺ NGẪU NHIÊN và xem nội dung của Quẻ đó chính là thông điệp đưa ra cho họ.
+            \nCách thứ hai: Bạn bảo họ tập trung suy nghĩ trong đầu về 2 con số bất kì từ 1-64 kèm theo một câu hỏi mà họ đang quan tâm sau đó bảo họ nói cho bạn biết về con số mà họ đang nghĩ trong đầu. Sau khi đã biết được con số đó bạn Nhấn nút XEM HỘ và chọn con số trong ô số và nhấn nút RÚT QUẺ ĐÃ CHỌN để tìm trong quẻ App 64 Quẻ để nói cho họ biết về thông điệp mà quẻ đưa ra đối với câu hỏi của họ."
                     android:textColor="@android:color/black"
-                    android:textSize="14sp" />
+                    android:textSize="17sp" />
 
             </LinearLayout>
 
@@ -117,7 +154,7 @@ Ií, giải quyêt như thê nào. Nên nhớ rằng Bạn càng tập trung ngh
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginBottom="25dp"
+            android:layout_marginBottom="10dp"
             android:background="@color/red_custom"
             android:fontFamily="@font/truculenta_bold"
             android:gravity="center"
