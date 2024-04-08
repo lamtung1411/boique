@@ -1,5 +1,6 @@
 package com.boikinhdich.quekinhdich.ui
 
+import OpenDialogXemHo
 import android.app.Dialog
 import android.content.Context
 import android.graphics.Color
@@ -25,13 +26,11 @@ import com.google.android.play.core.review.ReviewManager
 import com.google.android.play.core.review.testing.FakeReviewManager
 import java.util.Random
 
-class SelectQueFragment : Fragment() {
+class SelectQueFragment : Fragment(), OpenDialogXemHo.DialogListener {
 
     private var _binding: FragmentSelectQueBinding? = null
     private val binding get() = _binding!!
-
-    var listener: FragmentListener? = null
-
+    private var listener: FragmentListener? = null
 
     private val cardAdapter by lazy { CardAdapter() }
     private var isShowAnimatonFisrt = true
@@ -76,7 +75,7 @@ class SelectQueFragment : Fragment() {
                 setItems(items)
                 setOnItemClickListener(object : CardAdapter.OnItemClickListener {
                     override fun onItemClick(position: Int) {
-                        setItemDetailQue(items[position])
+                        listener?.onDetailQueFragment(items[position])
                     }
                 })
             }
@@ -97,80 +96,12 @@ class SelectQueFragment : Fragment() {
             }
 
             btnXemHo.setOnClickListener {
-                openDialogXemHo(items)
+                val openDialogXemHo = OpenDialogXemHo(items, requireContext())
+                openDialogXemHo.setDialogListener(this@SelectQueFragment)
+                openDialogXemHo.showDialog()
             }
 
         }
-    }
-
-    private fun openDialogXemHo(items: ArrayList<CardModel>) {
-        var dialogXemHo = Dialog(requireContext())
-        dialogXemHo.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        val binding = DialogXemHoBinding.inflate(layoutInflater)
-        dialogXemHo.setContentView(binding.root)
-
-        binding.apply {
-
-            val spinnerData = (1..64).map { it.toString() }
-            val adapter =
-                ArrayAdapter(requireContext(), R.layout.style_text_spinner, spinnerData)
-            adapter.setDropDownViewResource(R.layout.spinner_dropdown_item)
-
-            spinner.adapter = adapter
-
-            var idQue = 0
-
-            spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?,
-                    position: Int,
-                    id: Long
-                ) {
-                    val selectedItem = spinnerData[position]
-                    // Xử lý khi một mục được chọn
-                    idQue = selectedItem.toInt()
-                }
-
-                override fun onNothingSelected(parent: AdapterView<*>?) {
-                    // Xử lý khi không có mục nào được chọn
-                }
-            }
-
-            btnSelectIdQue.setOnClickListener {
-                for (item in items) {
-                    if (item.id == idQue)
-                        setItemDetailQue(item)
-                }
-                dialogXemHo.dismiss()
-            }
-
-            btnClose.setOnClickListener {
-                dialogXemHo.dismiss()
-            }
-
-            btnRandomQue.setOnClickListener {
-                val random = Random()
-                val randomNumber = random.nextInt(64) + 1
-
-                for (item in items) {
-                    if (item.id == randomNumber)
-                        setItemDetailQue(item)
-                }
-                dialogXemHo.dismiss()
-            }
-        }
-
-
-        val w: Int = ViewGroup.LayoutParams.WRAP_CONTENT
-        val h: Int = ViewGroup.LayoutParams.WRAP_CONTENT
-        dialogXemHo.window!!.setLayout(w, h)
-        dialogXemHo.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        dialogXemHo.show()
-    }
-
-    private fun setItemDetailQue(item: CardModel) {
-        listener?.onDetailQueFragment(item)
     }
 
     private fun animationRecyclview() {
@@ -179,6 +110,10 @@ class SelectQueFragment : Fragment() {
             R.animator.layout_animation_from_bottom_scale
         )
         binding!!.cardRecylerview.layoutAnimation = anim
+    }
+
+    override fun onItemSelected(item: CardModel) {
+        listener?.onDetailQueFragment(item)
     }
 
 

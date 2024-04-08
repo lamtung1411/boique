@@ -26,8 +26,6 @@ class MainActivity : AppCompatActivity(), FragmentListener {
 
     private var admobManager: AdmobManager? = null
     private var isAddBanner = false
-    val TAG = "MainActivity"
-    private var timerAds: Timer? = null
     private var reviewManager: ReviewManager? = null
     private lateinit var binding: ActivityMainBinding // View Binding
 
@@ -61,38 +59,10 @@ class MainActivity : AppCompatActivity(), FragmentListener {
                 }
 
                 isAddBanner = true
-
-//                btnShare.setOnClickListener {
-//                    onShareApp()
-//                }
-
-//                btnMore.setOnClickListener {
-//                    diaLogSetting(reviewManager!!, object : ChooseLanguageListener {
-//                        override fun onChangeLanguage() {
-//                            triggerRestart(this@MainActivity)
-//                        }
-//
-//                        override fun onTemps() {
-//
-//                            switchFragment(
-//                                TermsFragment(),
-//                                "TermsFragment",
-//                                true
-//                            )
-//                        }
-//                    })
-//                }
-
-//                if (BuildConfig.VERSION_CODE < versionAppFirebase())
-//                    showNoiceUpdateApp(this)
             }
 
             switchFragment(SelectQueFragment(), "SelectQueFragment", false)
         }
-    }
-
-    override fun onSelectQueFragment() {
-        switchFragment(SelectQueFragment(), "SelectQueFragment", true)
     }
 
     override fun onDetailQueFragment(item: CardModel) {

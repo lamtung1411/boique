@@ -1,129 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_bg_detail"
+    android:background="@color/brown_bg"
     android:gravity="center"
     tools:context=".ui.TutorialQueFragment">
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:fontFamily="@font/alegreya"
-        android:gravity="center"
-        android:text="Lưu ý &quot;khi sử dụng&quot;"
-        android:textColor="@android:color/black"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <ScrollView
-        android:id="@+id/scrollView2"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="80dp"
-        android:fillViewport="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title">
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:background="@drawable/ic_khung_bg_red"
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="30dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/alegreya"
+            android:gravity="center"
+            android:text="Lưu ý &quot;khi sử dụng&quot;"
+            android:textColor="@android:color/black"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="80dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Lưu ý 1: Trong một quẻ sẽ có 14 vấn đề dự đoán khác nhau. Tuy nhiên, khi rút quẻ chỉ xem một nội dung duy nhật nà trước khi rút quẻ Bạn nghĩ đến vấn đề đó chứ không phải xem tất cả ý nghĩa của 14 nội dung trong quẻ.
+                android:layout_marginHorizontal="30dp"
+
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Lưu ý 1: Trong một quẻ sẽ có 14 vấn đề dự đoán khác nhau. Tuy nhiên, khi rút quẻ chỉ xem một nội dung duy nhật nà trước khi rút quẻ Bạn nghĩ đến vấn đề đó chứ không phải xem tất cả ý nghĩa của 14 nội dung trong quẻ.
 \n\nLưu ý 2: Đối với cùng một câu hỏi không nên rút quẻ 2 lần để hỏi vì nếu làm như vậy sẽ mất đi sự linh ứng dẫn đến thông điệp đưa ra không chính xác do quá lạm dụng. Bạn có thể hỏi nhiều câu hỏi khác nhau tại một thời điểm, và nên nhớ sau mỗi câu hỏi nên trộn đều bộ thẻ và sau đó làm lại như
 Bước1 Bạn nhé.
 Cùng với sự đồng hành của Bộ thẻ 64
 Quẻ Kinh Dịch. Tôi chúc Bạn sẽ đưa ra được những quyết định sáng suốt trong cuộc sống."
-                android:textColor="@android:color/black"
-                android:textSize="14sp" />
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/alegreya"
-                android:gravity="center"
-                android:text="Khi xem cho &quot;bản thân&quot;"
-                android:textColor="@android:color/black"
-                android:textSize="20sp"
-                android:textStyle="italic" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/alegreya"
+                    android:gravity="center"
+                    android:text="Khi xem cho &quot;bản thân&quot;"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:textStyle="italic" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:text="Bước 1: Tập trung suy nghĩ vào nôi dung câu hỏi trong vòng 20-30s mà bản thân mình đang gặp vấn đề hoặc đang gặp khúc mắc không biết nên xử
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:text="Bước 1: Tập trung suy nghĩ vào nôi dung câu hỏi trong vòng 20-30s mà bản thân mình đang gặp vấn đề hoặc đang gặp khúc mắc không biết nên xử
 Ií, giải quyêt như thê nào. Nên nhớ rằng Bạn càng tập trung nghiêm túc bao nhiêu thì mức độ linh ứng càng cao bấy nhiêu.
 \n\nBước 2: Sau đó, trộn đều bộ bài lên và rút ngẫu nhiên một thẻ và xem nội dung của Quẻ đó chính là thông điệp đưa ra cho Bạn đối với câu hỏi đó."
-                android:textColor="@android:color/black"
-                android:textSize="14sp" />
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/alegreya"
-                android:gravity="center"
-                android:text="Khi xem cho &quot;người khác&quot;"
-                android:textColor="@android:color/black"
-                android:textSize="20sp"
-                android:textStyle="italic" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/alegreya"
+                    android:gravity="center"
+                    android:text="Khi xem cho &quot;người khác&quot;"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:textStyle="italic" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginVertical="10dp"
-                android:textColor="@android:color/black"
-                android:text="Cách thứ nhất: Hãy bảo họ tập trung suy nghĩ vào nội dung câu hỏi trong vòng 20-30s mà bản thân mình đang gặp vấn đề hoặc đang gặp khúc mắc không biêt nên xử lí, giải quyêt như thê nào. Và cũng hãy bảo họ thật nghiêm túc Bạn nhé. Sau đo, Bạn trộn đều bộ bài lên và bảo họ rút ngẫu nhiên một thẻ và xem nội dung của Quẻ đó chính là thông điệp đưa ra cho họ.
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="10dp"
+                    android:text="Cách thứ nhất: Hãy bảo họ tập trung suy nghĩ vào nội dung câu hỏi trong vòng 20-30s mà bản thân mình đang gặp vấn đề hoặc đang gặp khúc mắc không biêt nên xử lí, giải quyêt như thê nào. Và cũng hãy bảo họ thật nghiêm túc Bạn nhé. Sau đo, Bạn trộn đều bộ bài lên và bảo họ rút ngẫu nhiên một thẻ và xem nội dung của Quẻ đó chính là thông điệp đưa ra cho họ.
             \n\nCách thứ hai: Bạn bảo họ tập trung suy nghĩ trong đầu về 2 con số bất kì từ 1-64 kèm theo một câu hỏi mà họ đang quan tâm sau đó bảo họ nói cho bạn biết về con số mà họ đang nghĩ trong đầu. Sau khi đã biết được con số đó bạn hãy tìm trong Bộ thẻ 64 Quẻ Kinh Dịch rồi dựa vào Bộ thẻ để nói cho họ biết về thông điệp mà Bộ thẻ đưa ra đối với câu hỏi của họ."
-                android:textSize="14sp" />
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp" />
 
+            </LinearLayout>
 
-        </LinearLayout>
+        </ScrollView>
 
-    </ScrollView>
+        <carbon.widget.TextView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="25dp"
+            android:background="@color/red_custom"
+            android:fontFamily="@font/truculenta_bold"
+            android:gravity="center"
+            android:paddingHorizontal="40dp"
+            android:paddingVertical="10dp"
+            android:text="Quay lại"
+            android:textAllCaps="true"
+            android:textColor="#ffff"
+            android:textSize="18sp"
+            app:carbon_cornerRadius="10dp"
+            app:carbon_rippleColor="@color/transparent_click"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <carbon.widget.TextView
-        android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@color/red_custom"
-        android:fontFamily="@font/truculenta_bold"
-        android:gravity="center"
-        android:paddingHorizontal="40dp"
-        android:paddingVertical="10dp"
-        android:text="Quay lại"
-        android:textAllCaps="true"
-        android:textColor="#ffff"
-        android:textSize="18sp"
-        app:carbon_cornerRadius="10dp"
-        app:carbon_rippleColor="@color/transparent_click"
-        android:layout_marginBottom="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
